@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: DEPARTMENT-SERVICE
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/departments/**
+      - id: USER-SERVICE
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/users/**
